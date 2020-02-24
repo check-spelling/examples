@@ -74,7 +74,6 @@ fi
 rm -f "$run_output"
 
 echo "Checking spelling..."
-if [ -n "$DEBUG" ]; then
   begin_group 'Excluded paths'
   if [ -e "$excludelist_path" ]; then
     echo 'Excluded paths:'
@@ -83,7 +82,6 @@ if [ -n "$DEBUG" ]; then
     echo 'No excluded paths file'
   fi
   end_group
-fi
 
 xargs_zero() {
   if [ $(uname) = "Linux" ]; then
