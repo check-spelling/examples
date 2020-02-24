@@ -13,8 +13,9 @@ jobs:
       with:
         path: .git/spell-check
         ref: spelling-data-lorem
-    - uses: check-spelling/check-spelling@0.0.4-alpha
+    - uses: ./
       env:
         bucket: .git
         project: spell-check
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEBUG: 1
