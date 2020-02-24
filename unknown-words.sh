@@ -6,20 +6,13 @@
 set -e
 if [ -n "$DEBUG" ]; then
   set -x
+fi
   begin_group() {
     echo "::group::$1"
   }
   end_group() {
     echo '::end_group::'
   }
-else
-  begin_group() {
-    :
-  }
-  end_group() {
-    :
-  }
-fi
 
 begin_group "github event path"
 cat "$GITHUB_EVENT_PATH" || true
