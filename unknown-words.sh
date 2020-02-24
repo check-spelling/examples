@@ -21,6 +21,10 @@ else
   }
 fi
 
+begin_group "github event path"
+cat "$GITHUB_EVENT_PATH" || true
+end_group
+
 now() {
   date +'%s%N'
 }
